@@ -1,0 +1,48 @@
+When
+    [Case
+        (Deposit
+            (Role "Land2023-0")
+            (Role "Land2023-0")
+            (Token "" "")
+            (Constant 100000000)
+        )
+        (Pay
+            (Role "Land2023-0")
+            (Party (Role "Land2023-0"))
+            (Token "" "")
+            (Constant 100000000)
+            (When
+                [Case
+                    (Deposit
+                        (Role "Land2023-0")
+                        (Role "Land2023-0")
+                        (Token "" "")
+                        (Constant 200000000)
+                    )
+                    (Pay
+                        (Role "Land2023-0")
+                        (Party (Role "Land2023-0"))
+                        (Token "" "")
+                        (Constant 200000000)
+                        (When
+                            [Case
+                                (Deposit
+                                    (Role "Land2023-0")
+                                    (Role "Land2023-0")
+                                    (Token "" "")
+                                    (Constant 100000000)
+                                )
+                                (Pay
+                                    (Role "Land2023-0")
+                                    (Party (Role "Land2023-0"))
+                                    (Token "" "")
+                                    (Constant 100000000)
+                                    Close 
+                                )]
+                            1719827760000 Close 
+                        )
+                    )]
+                1719827340000 Close 
+            )
+        )]
+    1719825960000 Close 

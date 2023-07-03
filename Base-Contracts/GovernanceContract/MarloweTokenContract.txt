@@ -1,0 +1,48 @@
+When
+    [Case
+        (Deposit
+            (Address "addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7")
+            (Address "addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7")
+            (Token "8bb3b343d8e404472337966a722150048c768d0a92a9813596c5338d" "USDB")
+            (Constant 9000)
+        )
+        (Pay
+            (Address "addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7")
+            (Party (Address ""))
+            (Token "8bb3b343d8e404472337966a722150048c768d0a92a9813596c5338d" "USDB")
+            (Constant 9000)
+            (When
+                [Case
+                    (Deposit
+                        (Address "addr1q95e9feu4hkp4qwvgqasq02na05z3eg33zzjquf2d86e6qzznwng4gtlladnxm7d486psa003jy6dv230t82rvv3pflqeuzzt2")
+                        (Address "addr1q95e9feu4hkp4qwvgqasq02na05z3eg33zzjquf2d86e6qzznwng4gtlladnxm7d486psa003jy6dv230t82rvv3pflqeuzzt2")
+                        (Token "8bb3b343d8e404472337966a722150048c768d0a92a9813596c5338d" "USDB")
+                        (Constant 4560)
+                    )
+                    (Pay
+                        (Address "addr1q95e9feu4hkp4qwvgqasq02na05z3eg33zzjquf2d86e6qzznwng4gtlladnxm7d486psa003jy6dv230t82rvv3pflqeuzzt2")
+                        (Party (Address "addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7"))
+                        (Token "8bb3b343d8e404472337966a722150048c768d0a92a9813596c5338d" "USDB")
+                        (Constant 4560)
+                        (When
+                            [Case
+                                (Deposit
+                                    (Address "addr1q95e9feu4hkp4qwvgqasq02na05z3eg33zzjquf2d86e6qzznwng4gtlladnxm7d486psa003jy6dv230t82rvv3pflqeuzzt2")
+                                    (Address "addr1q95e9feu4hkp4qwvgqasq02na05z3eg33zzjquf2d86e6qzznwng4gtlladnxm7d486psa003jy6dv230t82rvv3pflqeuzzt2")
+                                    ?token
+                                    (Constant 4560)
+                                )
+                                (Pay
+                                    (Address "addr1q95e9feu4hkp4qwvgqasq02na05z3eg33zzjquf2d86e6qzznwng4gtlladnxm7d486psa003jy6dv230t82rvv3pflqeuzzt2")
+                                    (Party (Address "addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7"))
+                                    (Token "8bb3b343d8e404472337966a722150048c768d0a92a9813596c5338d" "USDB")
+                                    (Constant 4560)
+                                    Close 
+                                )]
+                            1688293599430 Close 
+                        )
+                    )]
+                1688293467129 Close 
+            )
+        )]
+    1688293315666 Close 

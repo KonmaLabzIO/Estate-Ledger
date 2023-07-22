@@ -1,0 +1,87 @@
+{
+  "when": [
+    {
+      "then": {
+        "when": [
+          {
+            "then": {
+              "then": {
+                "when": [
+                  {
+                    "then": {
+                      "token": {
+                        "token_name": "Land2023-1",
+                        "currency_symbol": "a0028f350aaabe0545fdcb56b039bfb08e4bb4d8c4d7c3c7d481c235"
+                      },
+                      "to": { "party": { "role_token": "Land2023-0" } },
+                      "then": "close",
+                      "pay": {
+                        "in_account": { "role_token": "Land2023-0" },
+                        "amount_of_token": {
+                          "token_name": "Land2023-2",
+                          "currency_symbol": "a0028f350aaabe0545fdcb56b039bfb08e4bb4d8c4d7c3c7d481c235"
+                        }
+                      },
+                      "from_account": { "role_token": "Land2023-0" }
+                    },
+                    "case": {
+                      "party": { "role_token": "Land2023-0" },
+                      "of_token": { "token_name": "", "currency_symbol": "" },
+                      "into_account": { "role_token": "Land2023-0" },
+                      "deposits": { "use_value": "Cost" }
+                    }
+                  }
+                ],
+                "timeout_continuation": "close",
+                "timeout": 1688317303719
+              },
+              "let": "Cost",
+              "be": {
+                "divide": {
+                  "times": 1000000,
+                  "multiply": {
+                    "in_account": { "role_token": "Land2023-0" },
+                    "amount_of_token": {
+                      "token_name": "Land2023-2",
+                      "currency_symbol": "a0028f350aaabe0545fdcb56b039bfb08e4bb4d8c4d7c3c7d481c235"
+                    }
+                  }
+                },
+                "by": {
+                  "value_of_choice": {
+                    "choice_owner": {
+                      "address": "addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7"
+                    },
+                    "choice_name": "Land2023-0"
+                  }
+                }
+              }
+            },
+            "case": {
+              "for_choice": {
+                "choice_owner": {
+                  "address": "addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7"
+                },
+                "choice_name": "ADA_HOSKY"
+              },
+              "choose_between": [{ "to": 1000000000, "from": 1 }]
+            }
+          }
+        ],
+        "timeout_continuation": "close",
+        "timeout": 1688317047258
+      },
+      "case": {
+        "party": { "role_token": "Land2023-0" },
+        "of_token": {
+          "token_name": "Land2023-1",
+          "currency_symbol": "a0028f350aaabe0545fdcb56b039bfb08e4bb4d8c4d7c3c7d481c235"
+        },
+        "into_account": { "role_token": "Land2023-0" },
+        "deposits": 1000000
+      }
+    }
+  ],
+  "timeout_continuation": "close",
+  "timeout": 1688317047258
+}

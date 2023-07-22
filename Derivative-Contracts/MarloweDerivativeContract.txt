@@ -1,0 +1,57 @@
+When
+    [Case
+        (Deposit
+            (Role "Land2023-0")
+            (Role "Land2023-0")
+            (Token "a0028f350aaabe0545fdcb56b039bfb08e4bb4d8c4d7c3c7d481c235" "Land2023-1")
+            (Constant 1000000)
+        )
+        (When
+            [Case
+                (Choice
+                    (ChoiceId
+                        "ADA_HOSKY"
+                        (Address "addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7")
+                    )
+                    [Bound 1 1000000000]
+                )
+                (Let
+                    "Cost"
+                    (DivValue
+                        (MulValue
+                            (AvailableMoney
+                                (Role "Land2023-0")
+                                (Token "a0028f350aaabe0545fdcb56b039bfb08e4bb4d8c4d7c3c7d481c235" "Land2023-2")
+                            )
+                            (Constant 1000000)
+                        )
+                        (ChoiceValue
+                            (ChoiceId
+                                "Land2023-0"
+                                (Address "addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7")
+                            ))
+                    )
+                    (When
+                        [Case
+                            (Deposit
+                                (Role "Land2023-0")
+                                (Role "Land2023-0")
+                                (Token "" "")
+                                (UseValue "Cost")
+                            )
+                            (Pay
+                                (Role "Land2023-0")
+                                (Party (Role "Land2023-0"))
+                                (Token "a0028f350aaabe0545fdcb56b039bfb08e4bb4d8c4d7c3c7d481c235" "Land2023-1")
+                                (AvailableMoney
+                                    (Role "Land2023-0")
+                                    (Token "a0028f350aaabe0545fdcb56b039bfb08e4bb4d8c4d7c3c7d481c235" "Land2023-2")
+                                )
+                                Close 
+                            )]
+                        1688317303719 Close 
+                    )
+                )]
+            1688317047258 Close 
+        )]
+    1688317047258 Close 

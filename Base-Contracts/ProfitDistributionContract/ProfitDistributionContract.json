@@ -1,0 +1,61 @@
+{
+  "when": [
+    {
+      "then": {
+        "token": { "token_name": "", "currency_symbol": "" },
+        "to": { "party": { "role_token": "Land2023-0" } },
+        "then": {
+          "when": [
+            {
+              "then": {
+                "token": { "token_name": "", "currency_symbol": "" },
+                "to": { "party": { "role_token": "Land2023-0" } },
+                "then": {
+                  "when": [
+                    {
+                      "then": {
+                        "token": { "token_name": "", "currency_symbol": "" },
+                        "to": { "party": { "role_token": "Land2023-0" } },
+                        "then": "close",
+                        "pay": 100000000,
+                        "from_account": { "role_token": "Land2023-0" }
+                      },
+                      "case": {
+                        "party": { "role_token": "Land2023-0" },
+                        "of_token": { "token_name": "", "currency_symbol": "" },
+                        "into_account": { "role_token": "Land2023-0" },
+                        "deposits": 100000000
+                      }
+                    }
+                  ],
+                  "timeout_continuation": "close",
+                  "timeout": 1719827760000
+                },
+                "pay": 200000000,
+                "from_account": { "role_token": "Land2023-0" }
+              },
+              "case": {
+                "party": { "role_token": "Land2023-0" },
+                "of_token": { "token_name": "", "currency_symbol": "" },
+                "into_account": { "role_token": "Land2023-0" },
+                "deposits": 200000000
+              }
+            }
+          ],
+          "timeout_continuation": "close",
+          "timeout": 1719827340000
+        },
+        "pay": 100000000,
+        "from_account": { "role_token": "Land2023-0" }
+      },
+      "case": {
+        "party": { "role_token": "Land2023-0" },
+        "of_token": { "token_name": "", "currency_symbol": "" },
+        "into_account": { "role_token": "Land2023-0" },
+        "deposits": 100000000
+      }
+    }
+  ],
+  "timeout_continuation": "close",
+  "timeout": 1719825960000
+}

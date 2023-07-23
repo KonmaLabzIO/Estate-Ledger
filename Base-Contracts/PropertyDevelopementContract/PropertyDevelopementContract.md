@@ -26,7 +26,7 @@ __<h2>Property Development Contract:</h2>__
 
 > - Accountability: The immutable nature of the blockchain ensures that the recorded stages and fund releases cannot be tampered with. This promotes accountability among all parties involved in the property development project.
 
-#### Code Blocks and explanations:
+#### [Code Blocks and explanations] (/Base-Contracts/PropertyDevelopementContract/PropertyDevelopementContract.json)
 
 - Deposit 1 - Land Acquisition: The contract starts with a deposit made by the "Land2023-0" role to a designated address. This deposit signifies the acquisition of a land asset related to the property development project. It involves the transfer of a token called "Land2023-1" and a constant value of 1, indicating the initial step towards property development.
 

@@ -1,0 +1,43 @@
+cabal-version:      2.4
+name:               Estate-ledger
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+-- The license under which the package is released.
+-- license:
+author:             FaizanShaikh-3033
+maintainer:         faizanvit8@gmail.com
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files: CHANGELOG.md
+
+executable Estate-ledger
+    main-is:          Main.hs
+
+    -- Modules included in this executable, other than Main.
+    other-modules:      Land_Acquisition_Contract,
+                        Tokenization_Contract,
+                        Sales_Contract,
+                        Land_Development_Contract,
+                        Commercial_Activities_Contract,
+                        Profit_Distribution_Contract,
+                        Governance_Contract,
+                        Upgrade_Contract,
+                        Land_info
+
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.16.4.0
+    hs-source-dirs:   app
+    default-language: Haskell2010

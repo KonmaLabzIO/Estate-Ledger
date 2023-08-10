@@ -9,6 +9,7 @@
 - [Smart Contracts](#smart-contracts)
 - [Future Enhancements](#future-enhancements)
 - [Conclusion](#conclusion)
+- [Runing Locally](#running-a-haskell-project-using-cabal)
 
 ## Introduction
 
@@ -112,3 +113,64 @@ These smart contracts work together to ensure the secure and efficient operation
 ## Conclusion
 
 Estate Ledger aims to revolutionize the real estate market by making it more accessible, transparent, and efficient. By leveraging the power of blockchain technology, Estate Ledger will provide a range of features and derivative products that empower both investors and real estate developers.
+
+
+
+## Running a Haskell Project using Cabal
+
+This guide will walk you through the process of running a Haskell project using Cabal. We'll assume that you have cloned the repository containing the project source code.
+
+### Step 1: Clone the Repository
+
+First, clone the repository containing the Haskell project source code. You can do this by using the following command:
+
+```bash
+git clone https://github.com/KonmaLabzIO/Estate-Ledger/
+```
+
+
+### Step 2: Initialize Cabal Configuration
+
+Navigate to the project directory and initialize the Cabal configuration. Cabal is a build tool for Haskell projects that helps manage dependencies and build processes. Run the following command:
+
+```bash
+cabal init
+```
+
+This command will guide you through the process of creating a `.cabal` file, which contains project configurations and metadata.
+
+### Step 3: Build the Project
+
+Once the `.cabal` file is generated, you can build the project by executing the following command:
+
+```bash
+cabal build
+```
+
+This command will compile the project source code and create executable files.
+
+### Step 4: Execute the Application
+
+To execute the application, use the `cabal exec` command followed by the name of the executable you want to run. For example, if the executable is named "Estate Ledger," use the following command:
+
+```bash
+cabal exec EstateLedger
+```
+
+This command will run the compiled application and display its output.
+
+### Step 5: Build and Execute with a Single Command
+
+You can also use the `cabal run` command to both build and execute the application. This command simplifies the process:
+
+```bash
+cabal run
+```
+
+Running this command will build the application, reveal executable links, and then execute the application, displaying its output.
+
+---
+
+With these steps, you should be able to successfully clone, initialize, build, and execute a Haskell project using Cabal. If you encounter any issues or need further assistance, refer to the official Cabal documentation for additional information.
+
+

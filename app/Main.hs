@@ -23,29 +23,20 @@ main = do
     pr <- readLn :: IO Double
     putStrLn "Enter land owner's name:"
     owner <- getLine
-
     let landDetails = Land loc sz pr owner ""
-
-    (result1, escrowWallet, landOwnerWallet) <- landAcquisitionContract landDetails
+    (result1, escrowWallet, _, _) <- landAcquisitionContract landDetails
     putStrLn result1
-
-    nft <- tokenizationContract landDetails escrowWallet landOwnerWallet
+    nft <- tokenizationContract landDetails escrowWallet owner
     case nft of
         Fractionalized count -> putStrLn $ show count ++ " fractional NFTs generated"
         Single -> putStrLn "Single NFT generated"
-
     (_, result2) <- salesContract nft escrowWallet
     putStrLn result2
-
     result3 <- landDevelopmentContract landDetails escrowWallet
     putStrLn result3
-
     commercialActivitiesContract escrowWallet
-
     putStrLn "Enter total profit generated from Commercial activities:"
     totalProfit <- readLn :: IO Double
-
     putStrLn "Enter count of investors:"
     investorCount <- readLn :: IO Int
-
-    profitDistributionContract landOwnerWallet landOwnerWallet totalProfit investorCount
+    profitDistributionContract owner escrowWallet totalProfit investorCount

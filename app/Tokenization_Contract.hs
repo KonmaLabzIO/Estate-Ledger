@@ -8,7 +8,6 @@ tokenizationContract land escrowWallet landOwnerWallet = do
     putStrLn "NFT generated for the acquired land!"
     putStrLn $ "Transferring NFT from land owner's wallet to escrow account: " ++ landOwnerWallet ++ " -> " ++ escrowWallet
     putStrLn "NFT transfer complete."
-
     putStrLn "Choose your option:"
     putStrLn "1. Fractionalize the NFT"
     putStrLn "2. Keep it as a single NFT"

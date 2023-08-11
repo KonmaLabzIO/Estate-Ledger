@@ -24,8 +24,5 @@ commercialActivitiesContract escrowWallet = do
             putStrLn $ "Income generated: " ++ income
             putStrLn $ "Transferring income to escrow wallet address: " ++ escrowWallet
             putStrLn "Confirmation of commercial activity. Income transferred."
-        "2" -> do
-            putStrLn "Cancellation of commercial activity."
-            putStrLn $ "Activity name: " ++ activityName
-            putStrLn $ "Cancelled by: " ++ escrowWallet
+        "2" -> putStrLn "Cancellation of commercial activity."
         _   -> putStrLn "Invalid choice!"

@@ -1,5 +1,4 @@
-
-module Land_info where
+module Land_info where 
 
 data Land = Land
   { location :: String,
@@ -14,5 +13,3 @@ data NFT = Fractionalized Int | Single deriving Show
 
 type Params = Land
 type Result = String
-
-data ActivityStatus = Confirmed | NeedImprovement deriving Show

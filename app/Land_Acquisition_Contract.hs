@@ -2,7 +2,7 @@ module Land_Acquisition_Contract where
 import Land_info
 
 -- 1. Land Acquisition Contract
-landAcquisitionContract :: Params -> IO (String, String, String)
+landAcquisitionContract :: Params -> IO (String, String, String, Double)
 landAcquisitionContract land = do
     putStrLn $ "Acquiring land at location: " ++ location land
     putStrLn $ "Size: " ++ show (size land) ++ " square feet"
@@ -12,7 +12,4 @@ landAcquisitionContract land = do
     escrowWallet <- getLine
     putStrLn "Enter the land owner's wallet address:"
     landOwnerWallet <- getLine
-    putStrLn $ "Transferring land price from " ++ escrowWallet ++ " to " ++ landOwnerWallet
-    putStrLn $ "Transferring ada" ++ show (price land) ++ " to land owner's wallet"
-    putStrLn "Transfer complete."
-    return ("Land acquisition confirmed for " ++ location land, escrowWallet, landOwnerWallet)
+    return ("Land acquisition confirmed for " ++ location land, escrowWallet, landOwnerWallet, price land)

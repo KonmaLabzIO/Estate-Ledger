@@ -12,27 +12,40 @@ import Land_info
 
 
 
--- Main function to execute all contracts sequentially
+-- Main function
 main :: IO ()
 main = do
     putStrLn "Enter land location:"
     loc <- getLine
     putStrLn "Enter land size (in square feet):"
     sz <- readLn :: IO Double
-    putStrLn "Enter land price ($):"
+    putStrLn "Enter land price (Ada):"
     pr <- readLn :: IO Double
-    putStrLn "Enter landowner name:"
+    putStrLn "Enter land owner's name:"
     owner <- getLine
 
-    let landDetails = Land loc sz pr owner
+    let landDetails = Land loc sz pr owner ""
 
-    result1 <- landAcquisitionContract landDetails
+    (result1, escrowWallet, landOwnerWallet) <- landAcquisitionContract landDetails
     putStrLn result1
 
-    nftsGenerated <- tokenizationContract landDetails
-    putStrLn $ "Total NFTs generated: " ++ show nftsGenerated
+    nft <- tokenizationContract landDetails escrowWallet landOwnerWallet
+    case nft of
+        Fractionalized count -> putStrLn $ show count ++ " fractional NFTs generated"
+        Single -> putStrLn "Single NFT generated"
 
-    remainingNFTs <- salesContract nftsGenerated
-    putStrLn $ "Remaining NFTs after sale: " ++ show remainingNFTs
+    (_, result2) <- salesContract nft escrowWallet
+    putStrLn result2
 
-    -- ... [Calls to other smart contracts, followed by printing their results]
+    result3 <- landDevelopmentContract landDetails escrowWallet
+    putStrLn result3
+
+    commercialActivitiesContract escrowWallet
+
+    putStrLn "Enter total profit generated from Commercial activities:"
+    totalProfit <- readLn :: IO Double
+
+    putStrLn "Enter count of investors:"
+    investorCount <- readLn :: IO Int
+
+    profitDistributionContract landOwnerWallet landOwnerWallet totalProfit investorCount

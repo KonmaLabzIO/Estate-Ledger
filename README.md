@@ -183,52 +183,58 @@ With these steps, you should be able to successfully clone, initialize, build, a
 - [Commercial Activities Contract](#commercial-activities-contract)
 - [Profit Distribution Contract](#profit-distribution-contract)
 
-
 ### Land Acquisition Contract
 This contract involves acquiring land from a seller. It requires the following inputs:
 
-```
+```haskell
+-- Contract Step 1
 Output: Enter land location:
 Input: <Location>
 ```
 **Land location:** The geographical location of the land.
 
-```
+```haskell
+-- Contract Step 2
 Output: Enter land size (in square feet):
 Input: <Size>
 ```
 **Land size:** Size must be in square feet; any other measurement must be converted to square feet.
 
-```
+```haskell
+-- Contract Step 3
 Output: Enter land price (Ada):
 Input: <Price>
 ```
 **Land price:** The price of the land in Ada (Cardano's cryptocurrency).
 
-```
+```haskell
+-- Contract Step 4
 Output: Enter land owner's name:
 Input: <LandOwnerName>
 ```
 **Land owner's name:** The name of the current owner of the land.
 
-```
+```haskell
+-- Contract Step 5
 Output: Enter the escrow wallet address for the NFT:
 Input: <EscrowWallet>
 ```
 **Escrow wallet address:** The wallet address where the payment will be temporarily held.
 
-```
+```haskell
+-- Contract Step 6
 Output: Enter the land owner's wallet address:
 Input: <LandOwnerWallet>
 ```
 **Land owner's wallet address:** The wallet address of the land owner to transfer the land price.
 
-**Explanation:** The contract displays the land details and prompts the user to enter the escrow wallet address and the land owner's wallet address. It confirms the land acquisition and simulates the transfer of the land price from the escrow wallet to the land owner's wallet.
+**Explanation:** The contract begins by requesting various inputs related to the land acquisition, such as location, size, price, and owner information. It simulates the process of confirming the land acquisition and transferring the payment.
 
 ### Tokenization Contract
 This contract involves generating NFTs (Non-Fungible Tokens) for the acquired land. It requires the following inputs:
 
-```
+```haskell
+-- Contract Step 1
 Output: NFT generated for the acquired land!
 Transferring NFT from land owner's wallet to escrow account: <LandOwnerWallet> -> <EscrowWallet>
 NFT transfer complete.
@@ -239,84 +245,109 @@ Input: <Choice>
 ```
 **NFT choice:** The user's choice between fractionalizing the NFTs or keeping them as a single NFT.
 
-**Explanation:** The contract generates NFTs for the land and displays messages indicating the transfer of NFTs from the land owner's wallet to the escrow account. It allows the user to choose between fractionalizing the NFTs or keeping them as a single NFT.
+**Explanation:** This contract generates NFTs for the land and simulates their transfer from the land owner's wallet to the escrow account. It allows the user to choose between fractionalizing the NFTs or keeping them as a single NFT.
 
 ### Sales Contract
 This contract facilitates the sale of NFTs to buyers. It requires the following inputs:
 
-```
+```haskell
+-- Contract Step 1
 Output: Enter buyer's name:
 Input: <BuyerName>
 ```
 **Buyer's name:** The name of the buyer.
 
-```
+```haskell
+-- Contract Step 2
 Output: Enter number of NFTs to buy:
 Input: <NumberOfNFTs>
 ```
 **Number of NFTs to buy:** The quantity of NFTs the buyer wants to purchase.
 
-```
+```haskell
+-- Contract Step 3
 Output: Enter buyer's receiving wallet address:
 Input: <BuyerWalletAddress>
 ```
 **Buyer's wallet address:** The wallet address where the NFTs will be transferred.
 
-**Explanation:** The contract prompts the user for buyer's information and the number of NFTs they want to buy. If the requested number of NFTs is available, it simulates payment verification and the transfer of NFTs to the buyer's wallet.
+**Explanation:** This contract prompts the user for buyer's information and the number of NFTs they want to buy. If the requested number of NFTs is available, it simulates payment verification and the transfer of NFTs to the buyer's wallet.
 
 ### Land Development Contract
 This contract involves the initiation or cancellation of a land development project. It requires the following inputs:
 
-```
+```haskell
+-- Contract Step 1
 Output: Enter project plan:
 Input: <ProjectPlan>
 ```
 **Project plan:** Details about the development project.
 
-```
+```haskell
+-- Contract Step 2
 Output: Enter project budget (ada):
 Input: <ProjectBudget>
 ```
 **Project budget:** The budget of the project in Ada.
 
-```
+```haskell
+-- Contract Step 3
 Output: Enter project timeline (in months):
 Input: <ProjectTimeline>
 ```
 **Project timeline:** The duration of the project in months.
 
+```haskell
+-- Contract Step 4
+Output: Enter developer's wallet address:
+Input: <DeveloperWallet>
 ```
+**Developer's wallet address:** The wallet address of the developer responsible for the project.
+
+```haskell
+-- Contract Step 5
+Output: Enter number of milestones required for the project:
+Input: <Milestones>
+```
+**Number of milestones:** The total number of milestones for the project.
+
+```haskell
+-- Contract Step 6
 Output: Escrow account holder, choose your option:
-1. Initiate
-2. Cancel
+1. Yes, Stage is confirmed. Release Fund
+2. Cancel, Need Improvement
 Input: <Choice>
 ```
-**Project choice:** The user's choice to either initiate or cancel the project.
+**Project choice:** The user's choice to either confirm a stage and release funds or cancel it.
 
-**Explanation:** The contract prompts the user for project details such as plan, budget, and timeline. It provides options to initiate or cancel the project and displays a confirmation message accordingly.
+**Explanation:** This contract prompts the user for project details, developer's information, and milestone data. It simulates the process of confirming or cancelling a stage of the project and releasing funds based on the confirmed milestones.
 
 ### Commercial Activities Contract
 This contract involves recording and confirming commercial activities. It requires the following inputs:
 
-```
+```haskell
+-- Contract Step 1
 Output: Enter type of activity:
 Input: <ActivityType>
 ```
 **Activity type:** The nature of the commercial activity.
 
-```
+```haskell
+-- Contract Step 2
 Output: Enter name of activity:
 Input: <ActivityName>
 ```
 **Activity name:** The name of the specific activity.
 
-```
+```haskell
+-- Contract Step 3
 Output: Enter income generated by this activity:
 Input: <IncomeGenerated>
 ```
 **Income generated:** The income generated by the activity.
 
-```
+```haskell
+-- Contract Step 4
 Output: Escrow wallet holder, choose your option:
 1. Yes, Confirm Activity
 2. Need Improvement
@@ -324,23 +355,23 @@ Input: <Choice>
 ```
 **Activity choice:** The user's choice to confirm the activity or suggest improvements.
 
-**Explanation:** The contract records the activity details and income. It provides options for the escrow wallet holder to confirm or suggest improvement for the activity. It simulates transferring the income to the escrow wallet.
+**Explanation:** This contract records the details of a commercial activity and the income it generates. It provides the option to confirm the activity or suggest improvements.
 
 ### Profit Distribution Contract
 This contract involves distributing profits from commercial activities among investors and the land owner. It requires the following inputs:
 
-```
+```haskell
+-- Contract Step 1
 Output: Enter wallet addresses of each investor:
 Input: <InvestorCount>
 ```
 **Investor count:** The number of investors participating.
 
-```
+```haskell
+-- Contract Step 2
 Output: Enter total profit generated from Commercial activities:
 Input: <TotalProfit>
 ```
 **Total profit:** The total profit from commercial activities.
 
-**Explanation:** The contract collects wallet addresses and names of each investor. It calculates the profit to be distributed to each recipient (investors and land owner) equally. It simulates transferring profits to the recipients' wallets.
-
-
+**Explanation:** This contract collects wallet addresses and names of each investor. It calculates the profit to be distributed to each recipient (investors and land owner) equally and simulates transferring profits to their respective wallets.
